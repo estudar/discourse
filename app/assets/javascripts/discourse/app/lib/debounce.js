@@ -8,8 +8,8 @@ import { isTesting } from "discourse-common/config/environment";
 
 export default function () {
   if (isTesting()) {
-    debounce(...arguments);
+    return run(...arguments);
   } else {
-    run(...arguments);
+    return debounce(...arguments);
   }
 }

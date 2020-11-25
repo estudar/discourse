@@ -1,6 +1,5 @@
-import { run } from "@ember/runloop";
 import { ajax } from "discourse/lib/ajax";
-const { discourseDebounce } = run;
+import discourseDebounce from "discourse/lib/debounce";
 
 let _queue = [];
 let _processing = 0;
