@@ -2,7 +2,8 @@ import getURL from "discourse-common/lib/get-url";
 import I18n from "I18n";
 import { isEmpty } from "@ember/utils";
 import { and, or, alias, reads } from "@ember/object/computed";
-import { cancel, debounce, run } from "@ember/runloop";
+import { cancel, run } from "@ember/runloop";
+import discourseDebounce from "discourse/lib/debounce";
 import { inject as service } from "@ember/service";
 import { inject } from "@ember/controller";
 import Controller from "@ember/controller";
@@ -1164,7 +1165,11 @@ export default Controller.extend({
         // in test debounce is Ember.run, this will cause
         // an infinite loop
         if (!isTesting()) {
-          this._saveDraftDebounce = debounce(this, this._saveDraft, 2000);
+          this._saveDraftDebounce = discourseDebounce(
+            this,
+            this._saveDraft,
+            2000
+          );
         }
       } else {
         this._saveDraftPromise = model.saveDraft().finally(() => {
@@ -1190,7 +1195,7 @@ export default Controller.extend({
       if (Date.now() - this._lastDraftSaved > 15000) {
         this._saveDraft();
       } else {
-        let method = isTesting() ? run : debounce;
+        let method = isTesting() ? run : discourseDebounce;
         this._saveDraftDebounce = method(this, this._saveDraft, 2000);
       }
     }

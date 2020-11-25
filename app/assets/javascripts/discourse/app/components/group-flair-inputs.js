@@ -1,7 +1,7 @@
 import getURL from "discourse-common/lib/get-url";
 import I18n from "I18n";
 import discourseComputed from "discourse-common/utils/decorators";
-import { debounce } from "@ember/runloop";
+import discourseDebounce from "discourse/lib/debounce";
 import Component from "@ember/component";
 import { on, observes } from "discourse-common/utils/decorators";
 import { escapeExpression } from "discourse/lib/utilities";
@@ -32,7 +32,7 @@ export default Component.extend({
   @observes("model.flair_icon")
   _loadSVGIcon(flairIcon) {
     if (flairIcon) {
-      debounce(this, this._loadIcon, 1000);
+      discourseDebounce(this, this._loadIcon, 1000);
     }
   },
 
