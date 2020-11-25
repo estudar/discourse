@@ -56,18 +56,20 @@ export default Component.extend({
   },
 
   @observes("markup")
-  _renderPreview: discourseDebounce(function () {
-    const markup = this.markup;
+  _renderPreview: () => {
+    discourseDebounce(this, function () {
+      const markup = this.markup;
 
-    if (markup) {
-      cookAsync(markup).then((result) => {
-        this.set("currentPreview", result);
-        schedule("afterRender", () =>
-          this.$(".preview .discourse-local-date").applyLocalDates()
-        );
-      });
-    }
-  }, INPUT_DELAY),
+      if (markup) {
+        cookAsync(markup).then((result) => {
+          this.set("currentPreview", result);
+          schedule("afterRender", () =>
+            this.$(".preview .discourse-local-date").applyLocalDates()
+          );
+        });
+      }
+    }, INPUT_DELAY)
+  },
 
   @computed("date", "toDate", "toTime")
   isRange(date, toDate, toTime) {

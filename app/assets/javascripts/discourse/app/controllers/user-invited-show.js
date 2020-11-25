@@ -26,13 +26,19 @@ export default Controller.extend({
   },
 
   @observes("searchTerm")
-  _searchTermChanged: discourseDebounce(function () {
-    Invite.findInvitedBy(
-      this.user,
-      this.filter,
-      this.searchTerm
-    ).then((invites) => this.set("model", invites));
-  }, INPUT_DELAY),
+  _searchTermChanged: () => {
+    discourseDebounce(
+      this,
+      function () {
+        Invite.findInvitedBy(
+          this.user,
+          this.filter,
+          this.searchTerm
+        ).then((invites) => this.set("model", invites));
+      },
+      INPUT_DELAY
+    );
+  },
 
   inviteRedeemed: equal("filter", "redeemed"),
   invitePending: equal("filter", "pending"),

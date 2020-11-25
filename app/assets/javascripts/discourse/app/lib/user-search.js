@@ -81,7 +81,32 @@ function performSearch(
     });
 }
 
-var debouncedSearch = discourseDebounce(performSearch, 300);
+var debouncedSearch = (
+  term,
+  topicId,
+  categoryId,
+  includeGroups,
+  includeMentionableGroups,
+  includeMessageableGroups,
+  allowedUsers,
+  groupMembersOf,
+  resultsFn
+) => {
+  discourseDebounce(
+    this,
+    performSearch,
+    term,
+    topicId,
+    categoryId,
+    includeGroups,
+    includeMentionableGroups,
+    includeMessageableGroups,
+    allowedUsers,
+    groupMembersOf,
+    resultsFn,
+    300
+  );
+};
 
 function organizeResults(r, options) {
   if (r === CANCELLED_STATUS) {

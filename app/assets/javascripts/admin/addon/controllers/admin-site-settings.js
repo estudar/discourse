@@ -112,13 +112,19 @@ export default Controller.extend({
   },
 
   @observes("filter", "onlyOverridden", "model")
-  filterContent: discourseDebounce(function () {
-    if (this._skipBounce) {
-      this.set("_skipBounce", false);
-    } else {
-      this.filterContentNow(this.categoryNameKey);
-    }
-  }, INPUT_DELAY),
+  filterContent: function () {
+    discourseDebounce(
+      this,
+      () => {
+        if (this._skipBounce) {
+          this.set("_skipBounce", false);
+        } else {
+          this.filterContentNow(this.categoryNameKey);
+        }
+      },
+      INPUT_DELAY
+    );
+  },
 
   actions: {
     clearFilter() {

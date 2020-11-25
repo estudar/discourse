@@ -37,9 +37,15 @@ export default Controller.extend({
   },
 
   @observes("nameInput")
-  _setName: discourseDebounce(function () {
-    this.set("name", this.nameInput);
-  }, 500),
+  _setName: function () {
+    discourseDebounce(
+      this,
+      function () {
+        this.set("name", this.nameInput);
+      },
+      500
+    );
+  },
 
   @observes("model.canLoadMore")
   _showFooter: function () {

@@ -19,9 +19,15 @@ export default Controller.extend({
   showActions: false,
 
   @observes("filterInput")
-  _setFilter: discourseDebounce(function () {
-    this.set("filter", this.filterInput);
-  }, 500),
+  _setFilter: () => {
+    discourseDebounce(
+      this,
+      function () {
+        this.set("filter", this.filterInput);
+      },
+      500
+    );
+  },
 
   @observes("order", "asc", "filter")
   _filtersChanged() {

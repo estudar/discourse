@@ -183,10 +183,9 @@ export default Component.extend({
 
     const { isWinphone, isAndroid } = this.capabilities;
     const wait = isWinphone || isAndroid ? INPUT_DELAY : 25;
-    const onSelectionChanged = discourseDebounce(
-      () => this._selectionChanged(),
-      wait
-    );
+    const onSelectionChanged = () => {
+      discourseDebounce(this, this._selectionChanged, wait);
+    };
 
     $(document)
       .on("mousedown.quote-button", (e) => {
