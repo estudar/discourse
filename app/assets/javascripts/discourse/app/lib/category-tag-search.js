@@ -1,5 +1,5 @@
 import getURL from "discourse-common/lib/get-url";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { CANCELLED_STATUS } from "discourse/lib/autocomplete";
 import Category from "discourse/models/category";
 import { TAG_HASHTAG_POSTFIX } from "discourse/lib/tag-hashtags";

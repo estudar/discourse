@@ -1,6 +1,6 @@
 import { INPUT_DELAY } from "discourse-common/config/environment";
 import { cancel, later } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { iconHTML } from "discourse-common/lib/icon-library";
 import { setCaretPosition, caretPosition } from "discourse/lib/utilities";
 import Site from "discourse/models/site";

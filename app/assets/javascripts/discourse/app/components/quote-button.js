@@ -1,6 +1,6 @@
 import { schedule } from "@ember/runloop";
 import Component from "@ember/component";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import toMarkdown from "discourse/lib/to-markdown";
 import {
   selectedText,

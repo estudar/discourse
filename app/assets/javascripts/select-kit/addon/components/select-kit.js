@@ -10,7 +10,7 @@ import PluginApiMixin from "select-kit/mixins/plugin-api";
 import Mixin from "@ember/object/mixin";
 import { isPresent, isEmpty, isNone } from "@ember/utils";
 import { next, cancel, throttle, bind, schedule } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { Promise } from "rsvp";
 import {
   applyContentPluginApiCallbacks,

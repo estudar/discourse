@@ -1,7 +1,7 @@
 import I18n from "I18n";
 import { scheduleOnce } from "@ember/runloop";
 import Component from "@ember/component";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { observes, on } from "discourse-common/utils/decorators";
 
 export default Component.extend({

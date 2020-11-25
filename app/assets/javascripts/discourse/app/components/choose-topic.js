@@ -1,7 +1,7 @@
 import { isEmpty } from "@ember/utils";
 import { next } from "@ember/runloop";
 import Component from "@ember/component";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { searchForTerm } from "discourse/lib/search";
 import { observes } from "discourse-common/utils/decorators";
 import discourseComputed from "discourse-common/utils/decorators";

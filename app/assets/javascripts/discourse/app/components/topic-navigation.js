@@ -1,6 +1,6 @@
 import EmberObject from "@ember/object";
 import { later } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import Component from "@ember/component";
 import { observes } from "discourse-common/utils/decorators";
 import showModal from "discourse/lib/show-modal";

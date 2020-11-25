@@ -1,7 +1,7 @@
 import I18n from "I18n";
 import discourseComputed, { observes } from "discourse-common/utils/decorators";
 import Controller from "@ember/controller";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { i18n } from "discourse/lib/computed";
 import AdminUser from "admin/models/admin-user";
 import CanCheckEmails from "discourse/mixins/can-check-emails";

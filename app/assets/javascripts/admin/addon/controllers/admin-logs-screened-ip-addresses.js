@@ -1,6 +1,6 @@
 import I18n from "I18n";
 import Controller from "@ember/controller";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { outputExportResult } from "discourse/lib/export-result";
 import { exportEntity } from "discourse/lib/export-csv";
 import ScreenedIpAddress from "admin/models/screened-ip-address";

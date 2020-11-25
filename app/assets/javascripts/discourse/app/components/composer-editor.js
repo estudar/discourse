@@ -1,7 +1,7 @@
 import getURL from "discourse-common/lib/get-url";
 import I18n from "I18n";
 import { run, later, next, schedule, throttle } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import Component from "@ember/component";
 import userSearch from "discourse/lib/user-search";
 import discourseComputed, {

@@ -3,7 +3,7 @@ import I18n from "I18n";
 import { isEmpty } from "@ember/utils";
 import { and, or, alias, reads } from "@ember/object/computed";
 import { cancel, run } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { inject as service } from "@ember/service";
 import { inject } from "@ember/controller";
 import Controller from "@ember/controller";

@@ -1,4 +1,4 @@
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import Controller from "@ember/controller";
 let lastSearch;
 

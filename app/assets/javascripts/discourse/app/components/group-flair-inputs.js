@@ -1,7 +1,7 @@
 import getURL from "discourse-common/lib/get-url";
 import I18n from "I18n";
 import discourseComputed from "discourse-common/utils/decorators";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import Component from "@ember/component";
 import { on, observes } from "discourse-common/utils/decorators";
 import { escapeExpression } from "discourse/lib/utilities";

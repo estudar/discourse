@@ -1,4 +1,4 @@
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { createWidget } from "discourse/widgets/widget";
 import transformPost from "discourse/lib/transform-post";
 import { Placeholder } from "discourse/lib/posts-with-placeholders";

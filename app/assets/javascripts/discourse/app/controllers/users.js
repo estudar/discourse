@@ -1,6 +1,6 @@
 import { equal } from "@ember/object/computed";
 import Controller, { inject as controller } from "@ember/controller";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { observes } from "discourse-common/utils/decorators";
 import { longDate } from "discourse/lib/formatter";
 

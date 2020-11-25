@@ -3,7 +3,7 @@ import TextField from "@ember/component/text-field";
 import discourseComputed from "discourse-common/utils/decorators";
 import { siteDir, isRTL, isLTR } from "discourse/lib/text-direction";
 import { next, cancel } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 
 const DEBOUNCE_MS = 500;
 

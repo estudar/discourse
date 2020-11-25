@@ -1,6 +1,6 @@
 import I18n from "I18n";
 import { isEmpty } from "@ember/utils";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { setting } from "discourse/lib/computed";
 import discourseComputed from "discourse-common/utils/decorators";
 import Mixin from "@ember/object/mixin";

@@ -1,6 +1,6 @@
 import Mixin from "@ember/object/mixin";
 import { later } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 
 const helper = {
   offset() {

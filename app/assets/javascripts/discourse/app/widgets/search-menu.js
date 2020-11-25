@@ -1,6 +1,6 @@
 import getURL from "discourse-common/lib/get-url";
 import { get } from "@ember/object";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { popupAjaxError } from "discourse/lib/ajax-error";
 import { searchForTerm, isValidSearchTerm } from "discourse/lib/search";
 import { createWidget } from "discourse/widgets/widget";

@@ -1,5 +1,5 @@
 import discourseComputed from "discourse-common/utils/decorators";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import Controller from "@ember/controller";
 import { INPUT_DELAY } from "discourse-common/config/environment";
 

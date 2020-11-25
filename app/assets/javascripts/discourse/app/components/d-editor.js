@@ -1,6 +1,6 @@
 import I18n from "I18n";
 import { later, next, schedule, scheduleOnce } from "@ember/runloop";
-import discourseDebounce from "discourse/lib/debounce";
+import discourseDebounce from "discourse-common/lib/debounce";
 import { inject as service } from "@ember/service";
 import Component from "@ember/component";
 import Mousetrap from "mousetrap";
