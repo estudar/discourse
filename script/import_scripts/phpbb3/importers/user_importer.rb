@@ -18,7 +18,9 @@ module ImportScripts::PhpBB3
     def map_user(row)
       is_active_user = row[:user_inactive_reason] != Constants::INACTIVE_REGISTER
       trust_level = row[:user_posts] == 0 ? TrustLevel[0] : TrustLevel[1]
+
       trust_level = @settings.trust_level_for_rank(row[:user_rank], trust_level: trust_level)
+      manual_locked_trust_level = trust_level > TrustLevel[1] ? trust_level : nil
 
       {
         id: @settings.prefix(row[:user_id]),
@@ -31,6 +33,7 @@ module ImportScripts::PhpBB3
         registration_ip_address: (IPAddr.new(row[:user_ip]) rescue nil),
         active: is_active_user,
         trust_level: trust_level,
+        manual_locked_trust_level: manual_locked_trust_level,
         approved: is_active_user,
         approved_by_id: is_active_user ? Discourse.system_user.id : nil,
         approved_at: is_active_user ? Time.now : nil,
